@@ -1,0 +1,18 @@
+Project1 obj2 = new Project1();
+            Console.Clear();
+             
+            DirectoryInfo d = new DirectoryInfo(@"C:\file maintenance  utility\myfiles");
+            DirectoryInfo d2 = new DirectoryInfo(@"C:\file maintenance  utility\TEMP");
+            DirectoryInfo d3 = new DirectoryInfo(@"C:\file maintenance  utility");
+            if (d3.Exists||d.Exists || d2.Exists)
+            {
+                //Console.WriteLine("Directory found!!!");
+                obj2.idcntr();
+            }
+            if (!(d3.Exists||d.Exists || d2.Exists))
+            {
+                d.CreateSubdirectory("myfiles");
+                d2.CreateSubdirectory("TEMP");
+                obj2.idcntr();
+            }
+            Console.ReadLine();
