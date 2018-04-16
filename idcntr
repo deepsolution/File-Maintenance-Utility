@@ -1,0 +1,54 @@
+public void idcntr()
+        {
+            try
+            {
+                char i;//char i datatype used to switch case
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n----------------WELCOME TO FILE VERSION MAINTENANCE UTILITY-------------------");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                // Console.WriteLine("\n\n\t\t\t\nInstruction:-\t1. A user needs to provide a user name and password to log on to\t\t  -the utility.\n\t\t2.Users are of two types, normal user and admini user.\n\t\t3.After successful logon, a normal user can perform the followin\t\t -g tasks:\n\t\t4.Add, modify, delete, and view files\n\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("\n\nWe have two user type:-\n=========================\n\n-----A.Admin user-----\n\n-----B.Normal user-----\n\nYour option is:-");
+                i = Convert.ToChar(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Blue;
+                switch (i)
+                {
+                    case 'A':
+                    case 'a':
+                        {
+                            adminuser();
+                            break;
+                        }
+                    case 'B':
+                    case 'b':
+                        {
+
+                            normaluser();
+                            break;
+                        }
+                    default:
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\n=========================\nUSER NOT FOUND!!!!!\n=========================\n");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        }
+                         
+           
+
+                }
+
+            }
+            catch(Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n=========================\nUSER NOT FOUND!!!!!\n=========================\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Process Failed :-{0}",e);
+            }
+            //Exit method used to exit to compiler
+            Exit();
+            
+           
+        }
