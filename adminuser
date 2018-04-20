@@ -1,0 +1,128 @@
+void adminuser()
+        {
+            try
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("\n-*-*-*-*-*-*-*WELCOME TO ADMIN USER-*-*-*-*-*-*-*-*\n\n");
+                Console.Write("****Enter Admin Name****\n\nNAME:-");
+                string user = Console.ReadLine();
+                Console.Write("\n\n~~~~Enter Admin Password~~~~\n\nPASSWORD:-");
+                string pass = Console.ReadLine();
+                string st = user + "," + pass;
+                //Console.WriteLine("\nINPUT : " + st);
+                //Console.Clear();
+                if (Project1.validate(st))
+                {
+                    Console.WriteLine("\n!!!!!!!!!!Choose your option!!!!!!!!!!\n");
+                    Console.WriteLine("\tA:-Addfile\n\n");
+                    Console.WriteLine("\tB:-Write\n\n");
+                    Console.WriteLine("\tC:-Read\n\n");
+                    Console.WriteLine("\tD:-Create Normaluser ID\n\n");
+                    Console.WriteLine("\tE:-Create Adminuser ID\n\n");
+                    Console.WriteLine("\tF:-Modify\n\n");
+                    Console.WriteLine("\tG:-Delete\n\n");
+                    Console.Write("\tH:-View\n\nYOUR OPTION IS:-");
+                    char s = Convert.ToChar(Console.ReadLine());
+                    //Console.Clear();
+                    try
+                    {
+                        switch (s)
+                        {
+                            case'A':
+                            case 'a':
+                                {
+                                    //if user press 'a' call addfile method that mean user can file add in the folder.   
+                                    addfile();
+                                    break;
+                                }
+
+                            case'B':
+                            case 'b':
+                                {
+                                    //if user press 'b' call writed method that mean user can file write in the folder
+                                    writed();
+                                    break;
+                                }
+                            case'C':
+                            case 'c':
+                                {
+                                    //if user press 'c' call read method that mean user can file read from the folder
+                                    read();
+                                    break;
+                                }
+                            case'D':
+                            case 'd':
+                                {
+                                    //if user press 'd' call create_normaluser method that mean user can create nomaluser password for protecting file
+                                    create_norusr();
+                                    break;
+                                }
+                            case'E':
+                            case 'e':
+                                {
+                                    //if user press 'e' call create_adminuser method that mean user can create adminuser password for protecting file
+                                    create_adminuser();
+                                    break;
+                                }
+                            case'F':
+                            case 'f':
+                                {
+                                    //if user press 'f' call modify method that mean user can modify in the file.
+                                    modify();
+                                    break;
+                                }
+                            case 'g':
+                            case 'G':
+                                {
+                                    //if user press 'e' call delete method that mean user can file delete from the folder
+                                    delete();
+                                    break;
+                                }
+                            case 'h':
+                            case 'H':
+                                {
+                                    //if user press 'f' call view method that mean user can file view from the folder
+                                    View();
+                                    break;
+                                }
+                            default:
+                                {
+                                    //if user wrong enter display error message. 
+                                    Console.BackgroundColor = ConsoleColor.Red;
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine("!!!!!!USER WRONG ENTERED!!!!!!");
+                                    break;
+                                }
+
+                        }
+                    }
+
+                    catch (Exception e)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("EXCEPTION PROCESS:-{0}", e);
+                    }
+
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("!!!USER IS NOT AUTHORIAZED!!!");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                     Console.ForegroundColor = ConsoleColor.White;
+                    
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("EXCEPTION PROCESS:-{0}",e);
+            }
+            
+            
+           
+        }
